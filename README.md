@@ -11,14 +11,15 @@
 - Logging ([fluentD](https://www.fluentd.org/) -> [Promethius](https://prometheus.io/))
 - Autoscaling
 - Håndtering av secrets ([hashicorp Vault](https://www.vaultproject.io/))
+- ServiceMesh ([istion](https://istio.io/))
 
 ## Ressurser
-- Slack kanal: hub-container
+- Slack kanal: #hub-container
 - MW repo: https://github.com/makingwaves/hub-containers-docs.git
-- Azure: spær Pål Rønning om tilgang
+- Azure: spør Pål Rønning om tilgang
 - Microsoft writeup for kubernetes arkitektur https://docs.microsoft.com/nb-no/azure/architecture/microservices/
 - Kubernetes app som vi kan bruke i bunn så vi slipper å skrive kode selv https://github.com/mspnp/microservices-reference-implementation
-- 
+
 
 ## Mål
 ### delmål 1:

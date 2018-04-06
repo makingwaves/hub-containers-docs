@@ -1,0 +1,58 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: botlerconversationapi
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 30
+  template:
+    metadata:
+      labels:
+        app: botlerconversationapi
+    spec:
+      containers:
+      - name: botlerconversationapi
+        image: botlercontainerreg.azurecr.io/botlerconversationapi:123
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5050
+        env:
+        - name: API
+          value: "botlerconversationapi"
+        - name: TAG
+          value: "123"
+        - name: redis_host
+          valueFrom:
+            secretKeyRef:
+              name: redissecret
+              key: redis_host
+        - name: redis_password
+          valueFrom:
+            secretKeyRef:
+              name: redissecret
+              key: redis_password
+        readinessProbe:
+          tcpSocket:
+           port: 5050
+      imagePullSecrets:
+      - name: registrysecret
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: botlerconversationapi
+spec:
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5050
+  selector:
+    app: botlerconversationapi

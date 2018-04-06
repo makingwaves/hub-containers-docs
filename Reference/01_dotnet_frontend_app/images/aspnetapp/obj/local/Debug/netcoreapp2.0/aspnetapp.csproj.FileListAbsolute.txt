@@ -1,0 +1,10 @@
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/bin/local/Debug/netcoreapp2.0/aspnetapp.deps.json
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/bin/local/Debug/netcoreapp2.0/aspnetapp.runtimeconfig.json
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/bin/local/Debug/netcoreapp2.0/aspnetapp.runtimeconfig.dev.json
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/bin/local/Debug/netcoreapp2.0/aspnetapp.dll
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/bin/local/Debug/netcoreapp2.0/aspnetapp.pdb
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/obj/local/Debug/netcoreapp2.0/aspnetapp.csproj.CoreCompileInputs.cache
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/obj/local/Debug/netcoreapp2.0/aspnetapp.AssemblyInfoInputs.cache
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/obj/local/Debug/netcoreapp2.0/aspnetapp.AssemblyInfo.cs
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/obj/local/Debug/netcoreapp2.0/aspnetapp.dll
+/Users/ronpal/Projects/Hubs/hub-containers-docs/Reference/01_dotnet_frontend_app/images/aspnetapp/obj/local/Debug/netcoreapp2.0/aspnetapp.pdb

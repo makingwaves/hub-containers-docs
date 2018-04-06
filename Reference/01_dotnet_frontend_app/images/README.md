@@ -1,8 +1,2 @@
-Build and run locally
-
-```console
-docker build -t dotnetapp .
-docker run --rm dotnetapp Hello .NET Core from Docker
-```
-
-Push to Docker Hub
+docker build -t myapp .
+docker run -p 1234:80 myapp

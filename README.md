@@ -32,3 +32,19 @@
 - Sikkerhet, f.eks. TLS-terminering med Træfik? https://medium.com/@patrickeasters/using-traefik-with-tls-on-kubernetes-cb67fb43a948
 
 ## Funn
+
+## Installering av kubernetes
+
+### Windows
+
+Den enkleste måten å installere K8s og minikube på windows er å bruke [chokolatey](https://chocolatey.org/install)
+
+> hyperv, docker-machine og minikube har noen bugs. minikube v0.26.0 hvis en får error powershell module ...
+> installer minikube 0.25: `choco install minikube --version 0.25.0 --allow-downgrade -y`
+
+* `choco install minikube -y` installerere både `kubectl` og `minikube`.
+* Opprette en hyper-v nettverksswitsj. Søk etter hyperv på maskinen og lag en ny switch:   
+<img src="./docs/images/hyperv-createSwitch.png" alr="hyperv switch creation" width="700" />
+* `minikube start --vm-driver hyperv --hyperv-virtual-switch "myhypervswitch"`
+
+    Hvis en får problemer kjør `minikube delete` og prøv på nytt

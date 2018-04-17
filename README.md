@@ -33,18 +33,22 @@
 
 ## Funn
 
-## Installering av kubernetes
+## Installation of kubernetes
+
+## useful minikube commands
+
+* `minikube dashboard` opens K8s in browser
 
 ### Windows
 
-Den enkleste måten å installere K8s og minikube på windows er å bruke [chokolatey](https://chocolatey.org/install)
+The easiest way to install K8s and minikube on Windows is to use [chokolatey](https://chocolatey.org/install)
 
-> hyperv, docker-machine og minikube har noen bugs. minikube v0.26.0 hvis en får error powershell module ...
-> installer minikube 0.25: `choco install minikube --version 0.25.0 --allow-downgrade -y`
+> hyperv, docker-machine and minikube have some bugs. If you get powershell module not found on minikube v0.26+.
+> downgrade to minikube 0.25: `choco install minikube --version 0.25.0 --allow-downgrade -y`
 
-* `choco install minikube -y` installerere både `kubectl` og `minikube`.
-* Opprette en hyper-v nettverksswitsj. Søk etter hyperv på maskinen og lag en ny switch:   
+* `choco install minikube -y` will install both `kubectl` and `minikube`.
+* Create a hyper-v virtual switch. Search for hyperv on your machine, and create a switch lie this:   
 <img src="./docs/images/hyperv-createSwitch.png" alr="hyperv switch creation" width="700" />
 * `minikube start --vm-driver hyperv --hyperv-virtual-switch "myhypervswitch"`
 
-    Hvis en får problemer kjør `minikube delete` og prøv på nytt
+    If you get problems run `minikube delete`to start over.

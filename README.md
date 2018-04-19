@@ -52,9 +52,6 @@ For the .net world the amount of different tools and companies might feel offput
 
 The easiest way to install K8s and minikube on Windows is to use [chokolatey](https://chocolatey.org/install)
 
-> hyperv, docker-machine and minikube have some bugs. If you get powershell module not found on minikube v0.26+.
-> downgrade to minikube 0.25: `choco install minikube --version 0.25.0 --allow-downgrade -y`
-
 * `choco install minikube -y` will install both `kubectl` and `minikube`.
 * Create a hyper-v virtual switch. Search for hyperv on your machine, and create a switch lie this:   
 <img src="./docs/images/hyperv-createSwitch.png" alr="hyperv switch creation" width="700" />

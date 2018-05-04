@@ -16,4 +16,7 @@ FROM microsoft/dotnet:2.0-runtime AS runtime
 ENV ASPNETCORE_URLS http://+:80
 WORKDIR /app
 COPY --from=build /app/aspnetapp/out ./
+
+
+EXPOSE  80
 ENTRYPOINT ["dotnet", "aspnetapp.dll"]

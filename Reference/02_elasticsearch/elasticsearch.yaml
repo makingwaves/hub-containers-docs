@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: elastic-service
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 9200
+    targetPort: 9200
+    protocol: TCP
+  selector:
+    app: elastic-search
+
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: elastic-search
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: elastic-search
+    spec:
+      containers:
+      - name: elastic-search
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: elastic-port
+          containerPort: 9200
+        env:
+        - name: cluster.name
+          value: mw-elastic-cluster
+        - name: discovery.type
+          value: single-node
+        terminationMessagePolicy: FallbackToLogsOnError # show log output as termination message when no message is present.
+      initContainers:
+      # Init commands to increase memory limit
+      - name: init-elastic
+        image: busybox
+        command:
+        - sysctl
+        - -w
+        - vm.max_map_count=262144
+        securityContext:
+          privileged: true
+
+---

@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnet-frontend-service
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  - name: https
+    port: 443
+    targetPort: 443
+    protocol: TCP
+  selector:
+    app: dotnet_frontend_app
+
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: dotnet-frontend
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 10
+  template:
+    metadata:
+      labels:
+        app: dotnet_frontend_app
+    spec:
+      containers:
+      - name: 01-dotnet-frontend-app
+        image: makingwaves/01_dotnet_frontend_app
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          tcpSocket:
+           port: 80
+
+---
